@@ -530,6 +530,9 @@ def create_material_atlas(folderpath: str):
         bpy.data.collections[c.get_name() + ' atlas'].exporters[0].export_properties.apply_scale_options = 'FBX_SCALE_ALL'
         bpy.data.collections[c.get_name() + ' atlas'].exporters[0].export_properties.path_mode = 'COPY'
         bpy.data.collections[c.get_name() + ' atlas'].exporters[0].export_properties.embed_textures = False
+        if ue_fix_axis:
+            bpy.data.collections[c.get_name() + ' atlas'].exporters[0].export_properties.axis_forward = '-Y'
+            bpy.data.collections[c.get_name() + ' atlas'].exporters[0].export_properties.axis_up = 'Z'
         bpy.data.collections[c.get_name() + ' atlas'].exporters[0].export_properties.mesh_smooth_type = 'OFF'
         bpy.data.collections[c.get_name() + ' atlas'].exporters[0].export_properties.filepath = os.path.join(folderpath.replace('baked_files', 'atlas_files'), f'{sanitizeMaterialName(c.get_name())} exported model atlas.fbx')
 
@@ -551,6 +554,7 @@ class bake_materials(bpy.types.Operator):
         try:
             #just use the pmx folder for the baked files
             scene = context.scene.kkbp
+            ue_fix_axis = scene.ue_fix_axis
             folderpath = os.path.join(context.scene.kkbp.import_dir, 'baked_files', '')
             last_step = time.time()
             c.toggle_console()
@@ -641,6 +645,9 @@ class bake_materials(bpy.types.Operator):
                     bpy.data.collections[c.get_name()].exporters[0].export_properties.apply_scale_options = 'FBX_SCALE_ALL'
                     bpy.data.collections[c.get_name()].exporters[0].export_properties.path_mode = 'COPY'
                     bpy.data.collections[c.get_name()].exporters[0].export_properties.embed_textures = False
+                    if ue_fix_axis:
+                        bpy.data.collections[c.get_name()].exporters[0].export_properties.axis_forward = '-Y'
+                        bpy.data.collections[c.get_name()].exporters[0].export_properties.axis_up = 'Z'
                     bpy.data.collections[c.get_name()].exporters[0].export_properties.mesh_smooth_type = 'OFF'
                     bpy.data.collections[c.get_name()].exporters[0].export_properties.filepath = os.path.join(folderpath.replace('baked_files', 'atlas_files'), f'{sanitizeMaterialName(c.get_name())} exported model.fbx')
             c.toggle_console()
