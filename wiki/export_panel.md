@@ -64,3 +64,6 @@ Additionally, you have the following options when "Unreal Engine" is selected:
 *   **Triangulate Mesh for UE:**
     *   Default: Off
     *   If enabled, this option will convert all mesh geometry (quads and n-gons) into triangles before export. While Unreal Engine can triangulate meshes on import, doing it in Blender first can give you more control over the final triangulation and help avoid potential issues.
+*   **Set UE Axis:**
+    *   Default: On
+    *   Configures the FBX exporter to use Unreal's axis setup (X forward, Z up). Disable this if you need custom axis settings.

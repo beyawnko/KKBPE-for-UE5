@@ -179,6 +179,7 @@ class PlaceholderProperties(PropertyGroup):
 
     ue_apply_scale : BoolProperty(name="Apply UE Scale (100x)", description="Scales the model by 100x for Unreal Engine compatibility. Make sure this is checked if exporting for UE.", default=True)
     ue_triangulate_mesh : BoolProperty(name="Triangulate Mesh for UE", description="Converts all quads/n-gons to triangles before export for Unreal Engine.", default=False)
+    ue_fix_axis : BoolProperty(name="Set UE Axis", description="Export with Unreal Engine axis orientation (X forward, Z up).", default=True)
 
 #The main panel
 class IMPORTINGHEADER_PT_panel(bpy.types.Panel):
@@ -307,6 +308,10 @@ class EXPORTING_PT_panel(bpy.types.Panel):
         row = col.row(align=True)
         row.prop(context.scene.kkbp, "ue_triangulate_mesh")
         # Ensure the same enable conditions apply, especially scene.prep_dropdown == 'E'
+        row.enabled = scene.prep_dropdown == 'E' and scene.plugin_state in ['imported'] and bpy.context.scene.kkbp.armature_dropdown in ['A', 'C', 'D']
+
+        row = col.row(align=True)
+        row.prop(context.scene.kkbp, "ue_fix_axis")
         row.enabled = scene.prep_dropdown == 'E' and scene.plugin_state in ['imported'] and bpy.context.scene.kkbp.armature_dropdown in ['A', 'C', 'D']
 
 class EXTRAS_PT_panel(bpy.types.Panel):
