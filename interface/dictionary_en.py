@@ -56,6 +56,11 @@ translation_dictionary = {
     removes duplicate Eyewhite material slot if present,
     edits bone hierarchy to match Epic Mannequin skeleton""",
 
+    'prep_drop_F'       : "UE5 Extended",
+    'prep_drop_F_tt'    : """Removes the outline and...
+    removes duplicate Eyewhite material slot if present,
+    edits bone hierarchy to match an extended Unreal skeleton including breasts and hip bones""",
+
     'simp_drop'     : 'Armature simplification type',
     'simp_drop_A'   : 'Very simple (SLOW)',
     'simp_drop_A_tt': 'Use this option if you want a very low bone count. Moves the pupil bones to layer 1 and simplifies bones on armature layers 3-5, 11-12, and 17-19 (Leaves you with ~100 bones not counting the skirt bones)',

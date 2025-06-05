@@ -78,8 +78,8 @@ def main(prep_type, simp_type, ue_apply_scale, ue_triangulate_mesh):
     bpy.context.view_layer.objects.active=bpy.data.objects[armature_name]
     bpy.ops.object.mode_set(mode='POSE')
 
-    # If exporting for Unreal...
-    if prep_type == 'E':
+    # If exporting for Unreal or UE5 Extended...
+    if prep_type in ['E', 'F']:
         armature = bpy.data.objects['Armature']
         bpy.context.view_layer.objects.active = armature
         bpy.ops.armature.collection_show_all()
@@ -118,6 +118,13 @@ def main(prep_type, simp_type, ue_apply_scale, ue_triangulate_mesh):
             'Left toe': 'ball_l',
             'Right toe': 'ball_r',
         }
+        if prep_type == 'F':
+            ue_rename_dict.update({
+                'cf_d_bust00': 'breasts',
+                'cf_j_bust01_L': 'breast_l',
+                'cf_j_bust01_R': 'breast_r',
+                'cf_j_waist01': 'hip',
+            })
         for bone in ue_rename_dict:
             if armature.data.bones.get(bone):
                 armature.data.bones[bone].name = ue_rename_dict[bone]
