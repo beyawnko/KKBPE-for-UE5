@@ -5,8 +5,6 @@ from bpy.props import BoolProperty, EnumProperty, StringProperty
 
 from .interface.dictionary_en import t
 
-from .interface.dictionary_en import t
-
 class KKBPPreferences(bpy.types.AddonPreferences):
     # this must match the add-on name, use '__package__'
     # when defining this in a submodule of a python package.
