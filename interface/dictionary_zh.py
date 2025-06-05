@@ -47,8 +47,13 @@ translation_dictionary = {
     移除重复的眼白材质槽（如果存在）
     移除“Upper Chest”骨骼，
     编辑骨骼层级以允许Unity自动检测正确骨骼""",
-    # 'prep_drop_E'       : 
-    # 'prep_drop_E_tt'    : 
+
+    # 'prep_drop_E'       :
+    # 'prep_drop_E_tt'    :
+    'prep_drop_F'       : "UE5扩展",
+    'prep_drop_F_tt'    : """删除轮廓...
+    移除重复的眼白材质槽（如果存在），
+    将骨骼调整为包含胸部和臀部骨骼的扩展UE骨架""",
 
     'simp_drop'     : '骨骼简化类型',
     'simp_drop_A'   : '非常简单（慢）',

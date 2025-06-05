@@ -74,6 +74,7 @@ class PlaceholderProperties(PropertyGroup):
             #("C", "MikuMikuDance - PMX compatible", " "),
             ("D", t('prep_drop_D'), t('prep_drop_D_tt')),
             ("E", t('prep_drop_E'), t('prep_drop_E_tt')),
+            ("F", t('prep_drop_F'), t('prep_drop_F_tt')),
             ("B", t('prep_drop_B'), t('prep_drop_B_tt')),
         ), name="", default=bpy.context.preferences.addons[__package__].preferences.prep_dropdown, description=t('prep_drop'))
 
@@ -303,16 +304,16 @@ class EXPORTING_PT_panel(bpy.types.Panel):
 
         row = col.row(align=True)
         row.prop(context.scene.kkbp, "ue_apply_scale")
-        row.enabled = scene.prep_dropdown == 'E' and scene.plugin_state in ['imported'] and bpy.context.scene.kkbp.armature_dropdown in ['A', 'C', 'D']
+        row.enabled = scene.prep_dropdown in ['E', 'F'] and scene.plugin_state in ['imported'] and bpy.context.scene.kkbp.armature_dropdown in ['A', 'C', 'D']
 
         row = col.row(align=True)
         row.prop(context.scene.kkbp, "ue_triangulate_mesh")
         # Ensure the same enable conditions apply, especially scene.prep_dropdown == 'E'
-        row.enabled = scene.prep_dropdown == 'E' and scene.plugin_state in ['imported'] and bpy.context.scene.kkbp.armature_dropdown in ['A', 'C', 'D']
+        row.enabled = scene.prep_dropdown in ['E', 'F'] and scene.plugin_state in ['imported'] and bpy.context.scene.kkbp.armature_dropdown in ['A', 'C', 'D']
 
         row = col.row(align=True)
         row.prop(context.scene.kkbp, "ue_fix_axis")
-        row.enabled = scene.prep_dropdown == 'E' and scene.plugin_state in ['imported'] and bpy.context.scene.kkbp.armature_dropdown in ['A', 'C', 'D']
+        row.enabled = scene.prep_dropdown in ['E', 'F'] and scene.plugin_state in ['imported'] and bpy.context.scene.kkbp.armature_dropdown in ['A', 'C', 'D']
 
 class EXTRAS_PT_panel(bpy.types.Panel):
     bl_label = t('extras')

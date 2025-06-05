@@ -67,3 +67,7 @@ Additionally, you have the following options when "Unreal Engine" is selected:
 *   **Set UE Axis:**
     *   Default: On
     *   Configures the FBX exporter to use Unreal's axis setup (X forward, Z up). Disable this if you need custom axis settings.
+
+### Preparing for UE5 Extended
+
+This option performs the same steps as **Unreal Engine** but also renames extra bones—including breasts and the hip—to better match an extended UE skeleton. Use it if your target rig expects these additional bone names.
