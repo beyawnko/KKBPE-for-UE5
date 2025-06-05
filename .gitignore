@@ -1,6 +1,5 @@
 .vscode/settings.json
 *.pyc
-*.pyc
 KK Shader V8.0.blend1
 .vscode/launch.json
 blender-3.6.9-windows-x64
