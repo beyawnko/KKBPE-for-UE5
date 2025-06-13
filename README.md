@@ -26,6 +26,20 @@ If you want to add or make changes to [the wiki site](https://kkbpwiki.github.io
 If you're interested in translating the plugin's interface into another language, [check this folder for examples](https://github.com/FlailingFog/KK-Blender-Porter-Pack/tree/master/interface).   
 This project does not accept donations.
 
+### Code style
+This project uses [black](https://github.com/psf/black) and
+[flake8](https://flake8.pycqa.org/) to keep the codebase consistent.
+Their configuration lives in `pyproject.toml` and can be run automatically
+via [pre-commit](https://pre-commit.com/).
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+Running these commands will enable automatic formatting and linting on each
+commit.
+
 ## Similar Projects
 
 * [KKBP Exporter](https://github.com/FlailingFog/KKBP_Exporter)
