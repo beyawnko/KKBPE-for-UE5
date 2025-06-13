@@ -53,8 +53,8 @@ def reg_unreg(register_bool):
     from .extras.resetmaterials import reset_materials
     from .extras.linkhair import link_hair
 
-    from . KKPanel import PlaceholderProperties
-    from . KKPanel import (
+    from .KKPanel import PlaceholderProperties
+    from .KKPanel import (
         IMPORTINGHEADER_PT_panel,
         IMPORTING_PT_panel,
         EXPORTING_PT_panel,
