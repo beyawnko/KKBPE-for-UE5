@@ -48,8 +48,10 @@ translation_dictionary = {
     移除“Upper Chest”骨骼，
     编辑骨骼层级以允许Unity自动检测正确骨骼""",
 
-    # 'prep_drop_E'       :
-    # 'prep_drop_E_tt'    :
+    'prep_drop_E'       : "Unreal Engine",
+    'prep_drop_E_tt'    : """删除轮廓...
+    移除重复的眼白材质槽（如果存在），
+    将骨骼层级调整为与Epic Mannequin骨架匹配""",
     'prep_drop_F'       : "UE5扩展",
     'prep_drop_F_tt'    : """删除轮廓...
     移除重复的眼白材质槽（如果存在），
