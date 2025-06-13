@@ -48,17 +48,6 @@ class KKBPPreferences(bpy.types.AddonPreferences):
     description=t('dark_F_tt'),
     default = True)
 
-    bake_light_bool : BoolProperty(
-    description=t('bake_light_tt'),
-    default = True)
-
-    bake_dark_bool : BoolProperty(
-    description=t('bake_dark_tt'),
-    default = True)
-
-    bake_norm_bool : BoolProperty(
-    description=t('bake_norm_tt'),
-    default = False)
 
     use_atlas : BoolProperty(
     description=t('use_atlas'),
